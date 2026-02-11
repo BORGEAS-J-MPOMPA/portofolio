@@ -1,0 +1,72 @@
+#logo_link {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+/* Bordure lumineuse */
+#logo_link::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  border: 0.25rem solid transparent;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Brillance au hover */
+#logo_link:hover::before {
+  border-color: #f08700;
+  box-shadow: 0 0 12px #f08700;
+}
+
+#logo_link:hover {
+  transform: scale(1.05);
+}
+
+
+.service-card {
+  flex: 1;
+  height: 180px;
+  background: #f08700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 15px 30px #f08700;
+}
+
+
+.portfolio-item {
+  flex: 1;
+  height: 200px;
+  background: rgba(255,255,255,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.portfolio-item:hover {
+  transform: scale(1.08) rotate(1deg);
+  box-shadow: 0 20px 40px #f08700;
+}
+
+
+.service-card:active,
+.portfolio-item:active {
+  transform: scale(0.95);
+}

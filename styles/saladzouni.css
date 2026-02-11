@@ -1,0 +1,291 @@
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ================= GLOBAL ================= */
+body {
+  background: #08415c;
+  color: #eee5e9;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ================= HEADER ================= */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  position: sticky;
+  top: 0;
+  background: #08415c;
+  z-index: 100;
+}
+
+/* Logo */
+#logo_link {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+}
+
+#logo_link::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#logo_link:hover::before {
+  border-color: #f08700;
+  box-shadow: 0 0 15px #f08700;
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  gap: 25px;
+}
+
+nav a {
+  color: #eee5e9;
+  text-decoration: none;
+  font-size: 18px;
+  position: relative;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 3px;
+  background: #f08700;
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* ================= SECTIONS ================= */
+.section {
+  padding: 80px 40px;
+}
+
+/* Bouton Télécharger CV */
+.download-cv-btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 12px 25px;
+  background-color: #f08700;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.download-cv-btn:hover {
+  background-color: #e57400;
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(240, 135, 0, 0.4);
+}
+
+#cv-message {
+  font-size: 16px;
+  color: #f08700;
+  margin-top: 8px;
+  font-weight: bold;
+  transition: opacity 0.3s ease;
+}
+
+
+.section h2 {
+  color: #f08700;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* ================= HOME ================= */
+.home {
+  text-align: center;
+}
+
+/* ================= SLIDERS ================= */
+.slider {
+  display: flex;
+  gap: 20px;
+  overflow: hidden;
+}
+
+.slider > div {
+  min-width: 300px;
+  cursor: pointer;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.slider > div:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 30px rgba(240, 135, 0, 0.6);
+}
+
+.slider img {
+  border-radius: 12px;
+}
+
+/* ================= ABOUT ================= */
+.about-container {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+}
+
+.about-container img {
+  width: 180px;
+  border-radius: 12px;
+}
+
+.about-container p {
+  max-width: 500px;
+}
+
+/* ================= CONTACT ================= */
+#contactForm {
+  max-width: 420px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#contactForm input,
+#contactForm textarea {
+  padding: 12px;
+  border-radius: 6px;
+  border: none;
+}
+
+#contactForm button {
+  background: #f08700;
+  color: #08415c;
+  font-weight: bold;
+  border: none;
+  padding: 12px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+#contact-message {
+  text-align: center;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+/* ================= FOOTER ================= */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.25);
+}
+
+/* =================================================
+   📱 MOBILE : max-width 767px
+================================================= */
+@media (max-width: 767px) {
+
+  header {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  nav a {
+    font-size: 16px;
+  }
+
+  .section {
+    padding: 60px 20px;
+  }
+
+  .slider {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .slider > div {
+    min-width: 100%;
+  }
+
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-container img {
+    width: 140px;
+  }
+}
+
+/* =================================================
+   📲 TABLETTE : 768px – 1023px
+================================================= */
+@media (min-width: 768px) and (max-width: 1023px) {
+
+  header {
+    padding: 20px 30px;
+  }
+
+  nav a {
+    font-size: 17px;
+  }
+
+  .section {
+    padding: 70px 30px;
+  }
+
+  .slider > div {
+    min-width: 260px;
+  }
+
+  .about-container img {
+    width: 160px;
+  }
+}
+
+/* =================================================
+   🖥️ DESKTOP LARGE : 1400px +
+================================================= */
+@media (min-width: 1400px) {
+
+  .section {
+    padding: 100px 120px;
+  }
+
+  .slider > div {
+    min-width: 360px;
+  }
+
+  nav a {
+    font-size: 19px;
+  }
+}

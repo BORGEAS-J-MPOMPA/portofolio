@@ -1,0 +1,10 @@
+CREATE DATABASE portfolio;
+USE portfolio;
+
+CREATE TABLE messages (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(100),
+  phone VARCHAR(30),
+  message TEXT,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
