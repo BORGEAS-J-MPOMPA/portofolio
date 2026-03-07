@@ -78,3 +78,18 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const toggle = document.getElementById("menu-toggle");
+  const nav = document.getElementById("nav-menu");
+
+  toggle.addEventListener("click", () => {
+    nav.classList.toggle("active");
+
+    if(nav.classList.contains("active")){
+      toggle.innerHTML = '<i class="fas fa-times"></i>';
+    } else {
+      toggle.innerHTML = '<i class="fas fa-bars"></i>';
+    }
+  });
+});

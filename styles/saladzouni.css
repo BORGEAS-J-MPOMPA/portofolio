@@ -61,6 +61,15 @@ nav {
   gap: 25px;
 }
 
+/* ================= HAMBURGER MENU ================= */
+
+.menu-toggle{
+  display: none;
+  font-size:28px;
+  color:#eee5e9;
+  cursor:pointer;
+}
+
 nav a {
   color: #eee5e9;
   text-decoration: none;
@@ -98,13 +107,13 @@ nav a:hover::after {
   border: 3px solid #f08700;
 }
 
-/* --- Ajustement pour petits écrans (smartphones) --- */
+/*--- Ajustement pour petits écrans (smartphones) ---*/
 @media screen and (max-width: 600px) {
   .first-card img {
     width: 90%;        /* occupe presque toute la largeur de l'écran */
     margin: 20px auto; /* moins d'espace au-dessus */
     border-radius: 5%; /* légèrement arrondi si tu veux */
-  }
+   }
 }
 
 /* Bouton Télécharger CV */
@@ -255,18 +264,51 @@ footer {
 ================================================= */
 @media (max-width: 767px) {
 
-  header {
-    flex-direction: column;
-    gap: 15px;
+  header{
+    flex-direction:row;
+    justify-content:space-between;
+    align-items:center;
   }
 
-  nav {
-    flex-wrap: wrap;
-    justify-content: center;
+  /* afficher hamburger */
+  .menu-toggle{
+    display:block;
   }
 
-  nav a {
-    font-size: 16px;
+  /* cacher menu au départ */
+  nav{
+    position:absolute;
+    top:100px;
+    left:0;
+    width:100%;
+    background:#08415c;
+    flex-direction:column;
+    align-items:center;
+    display:none;
+  }
+
+  /* afficher menu quand actif */
+  nav.active{
+    display:flex;
+  }
+
+  nav a{
+    padding:15px;
+    width:100%;
+    text-align:center;
+  }
+
+  nav a{
+    padding:15px;
+    width:100%;
+    text-align:center;
+    border-top:1px solid rgba(255,255,255,0.1);
+    font-size:16px;
+  }
+
+  /* menu visible */
+  nav.active{
+    display:flex;
   }
 
   .section {
